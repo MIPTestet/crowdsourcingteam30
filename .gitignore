@@ -1,0 +1,12 @@
+# Downloaded dataset images & raw candidate pools (reproduced via scripts/download_dataset.py)
+data/images/
+data/candidates/
+previews/contact_sheets/
+
+# Python / OS artifacts
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+venv/
+*.egg-info/
