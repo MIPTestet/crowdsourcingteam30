@@ -1,0 +1,27 @@
+[
+  {
+    "photo_id": 449740665,
+    "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/449740665/large.jpeg",
+    "status": "load_error",
+    "boxes": [],
+    "comment": "",
+    "requires_annotation": true,
+    "technical_error": "Image did not load for the annotator; annotation is missing",
+    "review_status": "pending",
+    "review_flags": [
+      "missing_or_invalid_annotation",
+      "worker_failed_controls"
+    ],
+    "unavailable_for_review": [
+      "e931734fbf47891afcbf68282b668f99"
+    ],
+    "source": {
+      "pool_id": "6867722",
+      "task_suite_id": "000068cb0a--6afb3fcb908f29281397ee06",
+      "assignment_id": "000068cb0a--6afc40ab2a37550c2c8eaca3",
+      "task_id": "7bf93aca-c4ec-4a1e-bca7-d895160941ee",
+      "user_id": "e931734fbf47891afcbf68282b668f99",
+      "submitted_at_utc": "2026-11-17T11:57:06.334"
+    }
+  }
+]
