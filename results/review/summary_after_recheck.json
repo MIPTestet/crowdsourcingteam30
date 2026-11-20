@@ -1,0 +1,11 @@
+{
+  "target": 400,
+  "initial_accepted": 267,
+  "team_accepted": 2,
+  "recheck_accepted": 55,
+  "ready": 324,
+  "pending": 76,
+  "pending_one_accept": 56,
+  "control_answers": 54,
+  "control_correct": 47
+}

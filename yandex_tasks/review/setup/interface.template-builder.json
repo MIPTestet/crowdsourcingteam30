@@ -1,0 +1,6689 @@
+{
+  "view": {
+    "type": "view.list",
+    "items": [
+      {
+        "type": "helper.if",
+        "condition": {
+          "type": "condition.equals",
+          "data": {
+            "type": "data.internal",
+            "path": "hide_boxes",
+            "default": false
+          },
+          "to": true
+        },
+        "then": {
+          "type": "view.image",
+          "url": {
+            "type": "data.input",
+            "path": "image_url"
+          },
+          "rotatable": false,
+          "ratio": [
+            4,
+            3
+          ]
+        },
+        "else": {
+          "type": "field.image-annotation",
+          "image": {
+            "type": "data.input",
+            "path": "image_url"
+          },
+          "disabled": true,
+          "data": {
+            "type": "data.internal",
+            "path": "rectangles",
+            "default": {
+              "$ref": "vars.rectangles"
+            }
+          },
+          "shapes": {
+            "rectangle": true,
+            "polygon": false,
+            "point": false
+          },
+          "ratio": [
+            4,
+            3
+          ]
+        }
+      },
+      {
+        "type": "field.checkbox",
+        "data": {
+          "type": "data.internal",
+          "path": "hide_boxes",
+          "default": false
+        },
+        "label": "Скрыть рамки"
+      },
+      {
+        "type": "field.button-radio-group",
+        "label": "Правильно ли выделены все взрослые бабочки?",
+        "options": [
+          {
+            "label": "Всё верно",
+            "value": "accept"
+          },
+          {
+            "label": "Пропущена бабочка",
+            "value": "reject_missed"
+          },
+          {
+            "label": "Лишняя рамка или выделен другой объект",
+            "value": "reject_extra"
+          },
+          {
+            "label": "Рамка неточная или объединяет бабочек",
+            "value": "reject_inaccurate"
+          },
+          {
+            "label": "Фото не загрузилось",
+            "value": "load_error"
+          }
+        ],
+        "validation": {
+          "type": "condition.required",
+          "hint": "Выберите один из четырёх вариантов"
+        },
+        "data": {
+          "type": "data.output",
+          "path": "verdict"
+        }
+      }
+    ]
+  },
+  "plugins": [
+    {
+      "type": "plugin.toloka",
+      "layout": {
+        "kind": "scroll",
+        "taskWidth": 650
+      }
+    },
+    {
+      "type": "plugin.hotkeys",
+      "1": {
+        "type": "action.set",
+        "data": {
+          "type": "data.output",
+          "path": "verdict"
+        },
+        "payload": "accept"
+      },
+      "2": {
+        "type": "action.set",
+        "data": {
+          "type": "data.output",
+          "path": "verdict"
+        },
+        "payload": "reject_missed"
+      },
+      "3": {
+        "type": "action.set",
+        "data": {
+          "type": "data.output",
+          "path": "verdict"
+        },
+        "payload": "reject_extra"
+      },
+      "4": {
+        "type": "action.set",
+        "data": {
+          "type": "data.output",
+          "path": "verdict"
+        },
+        "payload": "reject_inaccurate"
+      },
+      "5": {
+        "type": "action.set",
+        "data": {
+          "type": "data.output",
+          "path": "verdict"
+        },
+        "payload": "load_error"
+      }
+    }
+  ],
+  "vars": {
+    "rectangles": {
+      "type": "helper.switch",
+      "cases": [
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 446301801
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.253125,
+              "top": 0.24,
+              "width": 0.5700000000000001,
+              "height": 0.3324999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 677169643
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.075,
+              "top": 0.2675,
+              "width": 0.8575,
+              "height": 0.42
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757774157
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.19776611328125002,
+              "top": 0.1875,
+              "width": 0.64448486328125,
+              "height": 0.7175
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 761200985
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.41007913463797785,
+              "top": 0.3389828303850156,
+              "width": 0.2930572572253365,
+              "height": 0.27666703031116785
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 762169549
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3036791204637097,
+              "top": 0.3608870967741936,
+              "width": 0.384734122983871,
+              "height": 0.44556451612903225
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 73071119
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.08924817898022894,
+              "top": 0.31265348595213316,
+              "width": 0.4194849115504683,
+              "height": 0.3381893860561914
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 763489544
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.24,
+              "top": 0.08,
+              "width": 0.474375,
+              "height": 0.8025
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 77340708
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.04432994304767655,
+              "top": 0.31697333087173984,
+              "width": 0.7779894375258747,
+              "height": 0.3461615924272431
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 17375926
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.17932237791703248,
+              "top": 0.43471341132698144,
+              "width": 0.618515405129419,
+              "height": 0.43477233498636986
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 735085966
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2380485893416928,
+              "top": 0.1475,
+              "width": 0.5579858934169278,
+              "height": 0.6499999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 752114561
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3549654322780047,
+              "top": 0.3097876368516043,
+              "width": 0.17177520015128445,
+              "height": 0.15843275424594822
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 92757449
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.326416015625,
+              "top": 0.1025,
+              "width": 0.47509765625,
+              "height": 0.6174999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757425403
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.1031494140625,
+              "top": 0.0775,
+              "width": 0.8172607421875,
+              "height": 0.775
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 735908013
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.30472481224935144,
+              "top": 0.47587295253708356,
+              "width": 0.3820861499991157,
+              "height": 0.29502408445503686
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 213982675
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.392431640625,
+              "top": 0.38,
+              "width": 0.30559570312500006,
+              "height": 0.36
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 755752541
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.33,
+              "top": 0.41,
+              "width": 0.24333333333333335,
+              "height": 0.16250000000000003
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 703704782
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2381005859375,
+              "top": 0.235,
+              "width": 0.24309570312499995,
+              "height": 0.4674999999999999
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.42624999999999996,
+              "top": 0.3475,
+              "width": 0.20812988281250006,
+              "height": 0.38999999999999996
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 755140737
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3,
+              "top": 0.1925,
+              "width": 0.5662499999999999,
+              "height": 0.5874999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757460449
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.134443359375,
+              "top": 0.0325,
+              "width": 0.6153369140625,
+              "height": 0.8749999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 19924112
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.260625,
+              "top": 0.1925,
+              "width": 0.37687499999999996,
+              "height": 0.4475
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 761771549
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.22683544303797468,
+              "top": 0.0475,
+              "width": 0.5454852320675105,
+              "height": 0.7799999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 62858804
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.22499999999999998,
+              "top": 0.1525,
+              "width": 0.48187499999999994,
+              "height": 0.625
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758232942
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2567919921875,
+              "top": 0.18,
+              "width": 0.34183349609374997,
+              "height": 0.7
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758396310
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.36562500000000003,
+              "top": 0.3675,
+              "width": 0.241875,
+              "height": 0.37500000000000006
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 584599779
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.27999999999999997,
+              "top": 0.4675,
+              "width": 0.23333333333333334,
+              "height": 0.09499999999999997
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.32666666666666666,
+              "top": 0.4975,
+              "width": 0.29333333333333333,
+              "height": 0.21000000000000002
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758342175
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.22666666666666668,
+              "top": 0.315,
+              "width": 0.3566666666666667,
+              "height": 0.2475
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 763070275
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.36337499141693114,
+              "top": 0.3739999961853027,
+              "width": 0.2625,
+              "height": 0.2149999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 753317466
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0,
+              "top": 0.18349998474121093,
+              "width": 0.5903605554880026,
+              "height": 0.43250000000000005
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 759076538
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.23409374238923192,
+              "top": 0.03549999237060547,
+              "width": 0.35745849609374997,
+              "height": 0.96
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758328620
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.21599998474121093,
+              "top": 0.16099998474121094,
+              "width": 0.5266666666666666,
+              "height": 0.6025
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757813740
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.06728271484375,
+              "top": 0.08,
+              "width": 0.8464599609375,
+              "height": 0.76
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 415310235
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3128054740957967,
+              "top": 0.25,
+              "width": 0.5104985337243402,
+              "height": 0.42000000000000004
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 760274478
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.17706787109375,
+              "top": 0.22249999999999998,
+              "width": 0.708271484375,
+              "height": 0.4974999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 60062525
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.17066666666666666,
+              "top": 0.325,
+              "width": 0.530962962962963,
+              "height": 0.37499999999999994
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 521017170
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.25875,
+              "top": 0.145,
+              "width": 0.45749999999999996,
+              "height": 0.6699999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 228216090
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.00375,
+              "top": 0.047499999999999994,
+              "width": 0.9393749999999998,
+              "height": 0.8099999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 762258433
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.00500244140625,
+              "top": 0.0975,
+              "width": 0.99215087890625,
+              "height": 0.7275
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758722326
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.02625,
+              "top": 0.024999999999999998,
+              "width": 0.8906249999999999,
+              "height": 0.9649999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 35524450
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.04833984375,
+              "top": 0.29000000000000004,
+              "width": 0.565576171875,
+              "height": 0.54
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 752293629
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.09666666666666666,
+              "top": 0.0325,
+              "width": 0.7266666666666667,
+              "height": 0.5575
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 14825634
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.10171630859375,
+              "top": 0.0925,
+              "width": 0.4352124023437499,
+              "height": 0.6824999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 753092065
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.03599998474121094,
+              "top": 0.3940000009536743,
+              "width": 0.8633333333333334,
+              "height": 0.315
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 756603434
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.055999984741210936,
+              "top": 0.15100000381469728,
+              "width": 0.7833333333333333,
+              "height": 0.6725
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 119721238
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.08819579379633069,
+              "top": 0.3344999885559082,
+              "width": 0.20599365234375,
+              "height": 0.435
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.2011108328588307,
+              "top": 0.3819999885559082,
+              "width": 0.2532958984375,
+              "height": 0.4325
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.3491210867650807,
+              "top": 0.3519999885559082,
+              "width": 0.24566650390625,
+              "height": 0.37
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.3445434500463307,
+              "top": 0.1844999885559082,
+              "width": 0.2288818359375,
+              "height": 0.37249999999999994
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.5963134695775807,
+              "top": 0.2469999885559082,
+              "width": 0.13580322265625,
+              "height": 0.395
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.6832885672338307,
+              "top": 0.2344999885559082,
+              "width": 0.1739501953125,
+              "height": 0.5125
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 21908014
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.23437499999999997,
+              "top": 0.1475,
+              "width": 0.40125,
+              "height": 0.6625
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 762138814
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.1376,
+              "top": 0.1775,
+              "width": 0.336,
+              "height": 0.22000000000000003
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 110570995
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.051777343749999996,
+              "top": 0.1925,
+              "width": 0.49188476562499994,
+              "height": 0.7
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 762809741
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.26512939453125,
+              "top": 0.255,
+              "width": 0.4185375976562499,
+              "height": 0.5599999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 756558367
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.17432285606382458,
+              "top": 0.4142879711615334,
+              "width": 0.336196957689997,
+              "height": 0.39046927263670295
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 759627439
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.5107969394627625,
+              "top": 0.4264807324359706,
+              "width": 0.23788365587551596,
+              "height": 0.3776308281024471
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 533271600
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2705776750162384,
+              "top": 0.3971845294295743,
+              "width": 0.19531168992413456,
+              "height": 0.15611180849569906
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.4695571901032675,
+              "top": 0.5814927438650251,
+              "width": 0.13846039989926912,
+              "height": 0.15679952571374178
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 408035873
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.39814536931079947,
+              "top": 0.3472774820853294,
+              "width": 0.11762946463338919,
+              "height": 0.0554689840711341
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758205196
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.06666666666666667,
+              "top": 0.2675,
+              "width": 0.8566666666666667,
+              "height": 0.5325
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757324507
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.391875,
+              "top": 0.06,
+              "width": 0.46124999999999994,
+              "height": 0.5874999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 761722213
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.22999999999999998,
+              "top": 0.265,
+              "width": 0.43666666666666665,
+              "height": 0.37749999999999995
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 761897281
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.163125,
+              "top": 0.145,
+              "width": 0.793125,
+              "height": 0.6124999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 756200441
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.21187499999999998,
+              "top": 0.13499999999999998,
+              "width": 0.5999999999999999,
+              "height": 0.7675
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 760883746
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.08249999999999999,
+              "top": 0.24,
+              "width": 0.8681249999999999,
+              "height": 0.7024999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 527606305
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.4245849609375,
+              "top": 0.20500000000000002,
+              "width": 0.1848193359375,
+              "height": 0.27749999999999997
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.369638671875,
+              "top": 0.4375,
+              "width": 0.1248779296875,
+              "height": 0.1975
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.43291015624999996,
+              "top": 0.45749999999999996,
+              "width": 0.189814453125,
+              "height": 0.21500000000000002
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.5378076171874999,
+              "top": 0.5599999999999999,
+              "width": 0.18814941406250008,
+              "height": 0.1825
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 759018233
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.39,
+              "top": 0.44,
+              "width": 0.30999999999999994,
+              "height": 0.32
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 303205249
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.20812499999999998,
+              "top": 0.24749999999999997,
+              "width": 0.48749999999999993,
+              "height": 0.39
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 573309528
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0,
+              "top": 0.27149999618530274,
+              "width": 0.4993333180745443,
+              "height": 0.37249999999999994
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.4626666514078776,
+              "top": 0.3014999961853027,
+              "width": 0.4200000000000001,
+              "height": 0.45250000000000007
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757654762
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.23968358617275953,
+              "top": 0.1475,
+              "width": 0.49658203125,
+              "height": 0.765
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 733336806
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.04307045215562566,
+              "top": 0.0925,
+              "width": 0.8317981072555205,
+              "height": 0.7224999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 759277845
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.27984375,
+              "top": 0.1925,
+              "width": 0.36000000000000004,
+              "height": 0.5675
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 759812721
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.049999999999999996,
+              "top": 0.3075,
+              "width": 0.7633333333333333,
+              "height": 0.395
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 756692791
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.24000000000000002,
+              "top": 0.34,
+              "width": 0.3733333333333333,
+              "height": 0.17749999999999994
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 761588498
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.14625,
+              "top": 0.1825,
+              "width": 0.793125,
+              "height": 0.6575
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757714655
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3084684684684685,
+              "top": 0.3475,
+              "width": 0.46126126126126127,
+              "height": 0.335
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757832600
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.149375,
+              "top": 0.2225,
+              "width": 0.77955078125,
+              "height": 0.5675
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 737076985
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.1975,
+              "top": 0.09,
+              "width": 0.61,
+              "height": 0.6575000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 241946998
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.08837890625,
+              "top": 0.135,
+              "width": 0.7998291015625001,
+              "height": 0.7175
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757435800
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.32249999999999995,
+              "top": 0.33749999999999997,
+              "width": 0.34874999999999995,
+              "height": 0.27499999999999997
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 354309298
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.5766666666666667,
+              "top": 0.235,
+              "width": 0.2366666666666667,
+              "height": 0.1175
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.22,
+              "top": 0.58,
+              "width": 0.16666666666666666,
+              "height": 0.15000000000000002
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 761919006
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.03666666666666667,
+              "top": 0.0075,
+              "width": 0.8666666666666667,
+              "height": 0.75
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 754667628
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2866666666666667,
+              "top": 0.3925,
+              "width": 0.41,
+              "height": 0.20749999999999996
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 597648687
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.4747313691507799,
+              "top": 0.4675,
+              "width": 0.1508492201039861,
+              "height": 0.06499999999999995
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 521419361
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.4871249914169311,
+              "top": 0.45399999618530273,
+              "width": 0.20625000000000004,
+              "height": 0.3949999999999999
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.32399999141693114,
+              "top": 0.2089999961853027,
+              "width": 0.18374999999999997,
+              "height": 0.42499999999999993
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 688517685
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.07552906139184397,
+              "top": 0.28399999618530275,
+              "width": 0.5737304964539007,
+              "height": 0.5325
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 752501858
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3727499914169311,
+              "top": 0.38399999618530267,
+              "width": 0.208125,
+              "height": 0.21250000000000002
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758873493
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.40263119697257516,
+              "top": 0.30452976852527913,
+              "width": 0.5292706735942259,
+              "height": 0.3456239738060375
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 380870577
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.19874999999999998,
+              "top": 0.39499999999999996,
+              "width": 0.714375,
+              "height": 0.4699999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 667120840
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.078125,
+              "top": 0.195,
+              "width": 0.8359375,
+              "height": 0.45
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758100779
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2915584377615669,
+              "top": 0.4297329784596127,
+              "width": 0.38208614999911567,
+              "height": 0.19668272297002448
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 759475465
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3733333333333333,
+              "top": 0.3975,
+              "width": 0.41333333333333333,
+              "height": 0.195
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 745838017
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.346875,
+              "top": 0.4124999999999999,
+              "width": 0.31312499999999993,
+              "height": 0.3925000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 485754985
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.28180419921875,
+              "top": 0.155,
+              "width": 0.426875,
+              "height": 0.495
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 741146549
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3194675540765391,
+              "top": 0.2925,
+              "width": 0.46003327787021636,
+              "height": 0.6
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 763058633
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.20009765625,
+              "top": 0.09999999999999999,
+              "width": 0.79990234375,
+              "height": 0.845
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 414106724
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.11839111328125,
+              "top": 0.32,
+              "width": 0.43687988281249995,
+              "height": 0.43749999999999994
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 298423888
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.20146972656249998,
+              "top": 0.025,
+              "width": 0.7176318359375,
+              "height": 0.9699999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 762745202
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.09000000000000001,
+              "top": 0.2675,
+              "width": 0.91,
+              "height": 0.3725
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 688732087
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.18999999999999997,
+              "top": 0.0525,
+              "width": 0.7966666666666667,
+              "height": 0.8375
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 38875693
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.16324951171875002,
+              "top": 0.11750000000000001,
+              "width": 0.61262451171875,
+              "height": 0.665
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 763038157
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.07555555555555556,
+              "top": 0.12,
+              "width": 0.10666666666666665,
+              "height": 0.065
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.0044444444444444444,
+              "top": 0.1025,
+              "width": 0.08,
+              "height": 0.0825
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.035555555555555556,
+              "top": 0.185,
+              "width": 0.1288888888888889,
+              "height": 0.065
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.10222222222222223,
+              "top": 0.185,
+              "width": 0.11555555555555554,
+              "height": 0.0625
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.23111111111111113,
+              "top": 0.3375,
+              "width": 0.12444444444444444,
+              "height": 0.065
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.17777777777777778,
+              "top": 0.385,
+              "width": 0.14666666666666664,
+              "height": 0.07250000000000001
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.18666666666666665,
+              "top": 0.42,
+              "width": 0.11555555555555558,
+              "height": 0.07250000000000001
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.2,
+              "top": 0.6325,
+              "width": 0.10222222222222221,
+              "height": 0.06500000000000006
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.022222222222222223,
+              "top": 0.6075,
+              "width": 0.12,
+              "height": 0.0675
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.2577777777777778,
+              "top": 0.54,
+              "width": 0.3688888888888888,
+              "height": 0.235
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 753280344
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.19806004618937645,
+              "top": 0.165,
+              "width": 0.6060046189376443,
+              "height": 0.5825
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 244441153
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.11147705078124999,
+              "top": 0.015,
+              "width": 0.6442504882812499,
+              "height": 0.9775
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 196016062
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.1419999885559082,
+              "top": 0.28349998474121096,
+              "width": 0.6525,
+              "height": 0.3325
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 756575793
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.4054421664906197,
+              "top": 0.34770407968637895,
+              "width": 0.3537414965986394,
+              "height": 0.16326530612244905
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 558138984
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.41774999141693114,
+              "top": 0.4639999961853027,
+              "width": 0.2849999999999999,
+              "height": 0.4749999999999999
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.5546249914169311,
+              "top": 0.33899999618530274,
+              "width": 0.28312499999999996,
+              "height": 0.42999999999999994
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 742183688
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.0342138671875,
+              "top": 0.0875,
+              "width": 0.8748974609375,
+              "height": 0.8899999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 756811862
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.36017578125,
+              "top": 0.19999999999999998,
+              "width": 0.22677734374999997,
+              "height": 0.37750000000000006
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 639205548
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.15605706874189362,
+              "top": 0.09,
+              "width": 0.630869001297017,
+              "height": 0.63
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 762657203
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.08249999999999999,
+              "top": 0.245,
+              "width": 0.8156249999999999,
+              "height": 0.5825
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 707819393
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.125625,
+              "top": 0.1175,
+              "width": 0.7912499999999999,
+              "height": 0.8274999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 763402375
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.28638671875,
+              "top": 0.27999999999999997,
+              "width": 0.3879541015625,
+              "height": 0.5149999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 136273568
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.133125,
+              "top": 0.15,
+              "width": 0.8287499999999999,
+              "height": 0.7224999999999999
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.46499999999999997,
+              "top": 0.0025,
+              "width": 0.49124999999999996,
+              "height": 0.2425
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 127558214
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2170947168953717,
+              "top": 0.3464999961853027,
+              "width": 0.3421142578125,
+              "height": 0.5025000000000002
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.5148608301766217,
+              "top": 0.3589999961853027,
+              "width": 0.25552978515625,
+              "height": 0.5150000000000001
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.29945555673912166,
+              "top": 0.24649999618530274,
+              "width": 0.17316894531250004,
+              "height": 0.40249999999999997
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 384990565
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.35510203303123006,
+              "top": 0.3716836656842913,
+              "width": 0.32312925170068024,
+              "height": 0.17091836734693872
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 755178974
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.39294921875,
+              "top": 0.32749999999999996,
+              "width": 0.22811035156249992,
+              "height": 0.27499999999999997
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 759023585
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2225,
+              "top": 0.3075,
+              "width": 0.5075,
+              "height": 0.46499999999999997
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 413987675
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.040757686676427526,
+              "top": 0.0825,
+              "width": 0.9278367496339677,
+              "height": 0.75
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 689319221
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3288888888888889,
+              "top": 0.2975,
+              "width": 0.5022222222222222,
+              "height": 0.245
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 521011933
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.024374999999999997,
+              "top": 0.105,
+              "width": 0.9299999999999999,
+              "height": 0.7975
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757136916
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.35850830078125,
+              "top": 0.2975,
+              "width": 0.25012207031249994,
+              "height": 0.405
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757329975
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.13333333333333333,
+              "top": 0.025,
+              "width": 0.7866666666666666,
+              "height": 0.77
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 762103157
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.34656053833663464,
+              "top": 0.13899999618530273,
+              "width": 0.43833007812499997,
+              "height": 0.72
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757559589
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3058183506689966,
+              "top": 0.0319999885559082,
+              "width": 0.6504345703125001,
+              "height": 0.8775000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757453142
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.17903320312499998,
+              "top": 0.1675,
+              "width": 0.6630859375,
+              "height": 0.555
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 759944838
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.23666666666666666,
+              "top": 0.2425,
+              "width": 0.61,
+              "height": 0.34249999999999997
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 229270832
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.24562499999999998,
+              "top": 0.2825,
+              "width": 0.5775,
+              "height": 0.5525
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 51669595
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.05278350515463918,
+              "top": 0.3325,
+              "width": 0.5278350515463919,
+              "height": 0.1725
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.5383917525773196,
+              "top": 0.3975,
+              "width": 0.3325360824742267,
+              "height": 0.21749999999999997
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 423583466
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.38318700408563017,
+              "top": 0.20850000381469724,
+              "width": 0.37685058593750004,
+              "height": 0.5125
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 754985266
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.32805186547503246,
+              "top": 0.2879999923706055,
+              "width": 0.5212970168612192,
+              "height": 0.43000000000000005
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 458830342
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2021484263241291,
+              "top": 0.3089999961853027,
+              "width": 0.537109375,
+              "height": 0.475
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757672675
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.25933331807454424,
+              "top": 0.4184999847412109,
+              "width": 0.5566666666666666,
+              "height": 0.14250000000000002
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757795998
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.44521728515625,
+              "top": 0.24500000000000002,
+              "width": 0.29014160156249996,
+              "height": 0.4525
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 110160792
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.16524193548387095,
+              "top": 0.10999999999999999,
+              "width": 0.7873292220113852,
+              "height": 0.8049999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 6588144
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.19126310821288403,
+              "top": 0.10397360903646954,
+              "width": 0.5640873378076336,
+              "height": 0.5779908989507796
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 224145341
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.118125,
+              "top": 0.2925,
+              "width": 0.6281249999999999,
+              "height": 0.48249999999999993
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 386866751
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.275,
+              "top": 0.2875,
+              "width": 0.405,
+              "height": 0.34750000000000003
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 634337861
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3733333333333333,
+              "top": 0.2725,
+              "width": 0.5022222222222222,
+              "height": 0.2525
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.26666666666666666,
+              "top": 0.625,
+              "width": 0.5777777777777777,
+              "height": 0.37250000000000005
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 760545150
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3666666666666667,
+              "top": 0.3525,
+              "width": 0.37,
+              "height": 0.2425
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 517205161
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3133333333333333,
+              "top": 0.4275,
+              "width": 0.26333333333333336,
+              "height": 0.10999999999999999
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.5499999999999999,
+              "top": 0.4725,
+              "width": 0.16333333333333344,
+              "height": 0.1375
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 748051892
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.30087976539589445,
+              "top": 0.22000000000000003,
+              "width": 0.41454545454545455,
+              "height": 0.615
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 390616794
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.1904357066950053,
+              "top": 0.1225,
+              "width": 0.29381509032943676,
+              "height": 0.2025
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.2312433581296493,
+              "top": 0.2775,
+              "width": 0.2611689691817216,
+              "height": 0.21999999999999997
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.002720510095642933,
+              "top": 0.2575,
+              "width": 0.2638894792773645,
+              "height": 0.21249999999999997
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.40535600425079704,
+              "top": 0.55,
+              "width": 0.19587672688629115,
+              "height": 0.26
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.5876301806588736,
+              "top": 0.47,
+              "width": 0.16323060573857584,
+              "height": 0.30500000000000005
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.688289054197662,
+              "top": 0.525,
+              "width": 0.25028692879915004,
+              "height": 0.375
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.7563018065887354,
+              "top": 0.44,
+              "width": 0.206758767268863,
+              "height": 0.23000000000000004
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757720141
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.35333333333333333,
+              "top": 0.3325,
+              "width": 0.34666666666666673,
+              "height": 0.21750000000000003
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757336453
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.18712499141693115,
+              "top": 0.19450000762939454,
+              "width": 0.564375,
+              "height": 0.46499999999999997
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 605930996
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.07570426495622568,
+              "top": 0,
+              "width": 0.8632944228274968,
+              "height": 0.513499984741211
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.2218002442039559,
+              "top": 0.34649999618530275,
+              "width": 0.4382879377431907,
+              "height": 0.39999999999999997
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 14360512
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.36749999182564874,
+              "top": 0.3649999891008649,
+              "width": 0.2607142857142857,
+              "height": 0.28571428571428586
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 761588650
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.13499999999999998,
+              "top": 0.18499999999999997,
+              "width": 0.6862499999999999,
+              "height": 0.6425000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 299138364
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.03543252595155709,
+              "top": 0.125,
+              "width": 0.9153402537485583,
+              "height": 0.8275
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 389637511
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.16333333333333333,
+              "top": 0.34,
+              "width": 0.43666666666666665,
+              "height": 0.24999999999999994
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 420462826
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3466666666666667,
+              "top": 0.4375,
+              "width": 0.30666666666666664,
+              "height": 0.24750000000000005
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.0033333333333333335,
+              "top": 0.6075,
+              "width": 0.7100000000000001,
+              "height": 0.36249999999999993
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758370761
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.47314453125000006,
+              "top": 0.19750000000000004,
+              "width": 0.47314453125000006,
+              "height": 0.62
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 761988032
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.01758586849852797,
+              "top": 0.135,
+              "width": 0.962198233562316,
+              "height": 0.795
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 751693169
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2989130773209035,
+              "top": 0.315,
+              "width": 0.34822998046875003,
+              "height": 0.44249999999999984
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 544612312
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.012733666612694301,
+              "top": 0.040999984741210936,
+              "width": 0.779937823834197,
+              "height": 0.6
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.30454713811528494,
+              "top": 0.3619999885559082,
+              "width": 0.4615958549222798,
+              "height": 0.5325
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 667238360
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.28444444444444444,
+              "top": 0.2875,
+              "width": 0.6444444444444444,
+              "height": 0.35250000000000004
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 720383621
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.030795898437500004,
+              "top": 0,
+              "width": 0.9692041015625,
+              "height": 0.9650000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 761866417
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.1232666015625,
+              "top": 0.06,
+              "width": 0.69664306640625,
+              "height": 0.825
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 408186237
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.02625,
+              "top": 0.2625,
+              "width": 0.57,
+              "height": 0.5349999999999999
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.033749999999999995,
+              "top": 0.605,
+              "width": 0.556875,
+              "height": 0.39249999999999996
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 222768842
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.13092041015625,
+              "top": 0.07,
+              "width": 0.56195068359375,
+              "height": 0.7775000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 535334535
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.32,
+              "top": 0.2625,
+              "width": 0.41250000000000003,
+              "height": 0.455
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 749069406
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.26437499999999997,
+              "top": 0.33499999999999996,
+              "width": 0.435,
+              "height": 0.395
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 516742556
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.27,
+              "top": 0.16,
+              "width": 0.29666666666666663,
+              "height": 0.17750000000000002
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.52,
+              "top": 0.2425,
+              "width": 0.2833333333333333,
+              "height": 0.21250000000000002
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.22,
+              "top": 0.345,
+              "width": 0.24999999999999997,
+              "height": 0.21750000000000003
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.44,
+              "top": 0.345,
+              "width": 0.3199999999999999,
+              "height": 0.24250000000000005
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 162747182
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.01125,
+              "top": 0.15,
+              "width": 0.70875,
+              "height": 0.6724999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757794483
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.05569377027290673,
+              "top": 0.2404419436503036,
+              "width": 0.8834512990895194,
+              "height": 0.4456400554371126
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 324819990
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.15129638671875,
+              "top": 0.16249999999999998,
+              "width": 0.6650390625,
+              "height": 0.665
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758013992
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.30904760814848403,
+              "top": 0.3542857033865792,
+              "width": 0.5047619047619047,
+              "height": 0.32142857142857134
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 32428310
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.25837499141693115,
+              "top": 0.32349998474121094,
+              "width": 0.3768749999999999,
+              "height": 0.2874999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758397413
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3611249935626984,
+              "top": 0.2809999990463257,
+              "width": 0.27703125,
+              "height": 0.39999999999999997
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 59063170
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.19191844629123808,
+              "top": 0.2134999990463257,
+              "width": 0.600625,
+              "height": 0.5700000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 762688897
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.44625,
+              "top": 0.435,
+              "width": 0.09374999999999994,
+              "height": 0.14499999999999996
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 531382307
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.12866551126516462,
+              "top": 0.17,
+              "width": 0.7453726169844022,
+              "height": 0.38
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 741149091
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.13514720812182743,
+              "top": 0.23,
+              "width": 0.7433096446700507,
+              "height": 0.5700000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 762642743
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.036625976562499996,
+              "top": 0,
+              "width": 0.9633740234375,
+              "height": 0.9824999999999998
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757847507
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.365625,
+              "top": 0.24,
+              "width": 0.32437499999999997,
+              "height": 0.4524999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 761792971
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.271875,
+              "top": 0.17499999999999996,
+              "width": 0.328125,
+              "height": 0.365
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757459547
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.33644805766914526,
+              "top": 0.28745854452687053,
+              "width": 0.22981565479651606,
+              "height": 0.1702468731084621
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 751777249
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0,
+              "top": 0.24940948911800473,
+              "width": 1,
+              "height": 0.3483711909235804
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 728026795
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.5070190428685167,
+              "top": 0.5293679299117183,
+              "width": 0.48935817931938375,
+              "height": 0.2071724681950925
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.2579862327522466,
+              "top": 0.4034909872109026,
+              "width": 0.4876166911367526,
+              "height": 0.3828757007149811
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 417451223
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.1775,
+              "top": 0.2525,
+              "width": 0.775,
+              "height": 0.6174999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 8975522
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.44188232421875,
+              "top": 0.3525,
+              "width": 0.27013183593749995,
+              "height": 0.34500000000000003
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 598458776
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.17476806640625,
+              "top": 0.18000000000000002,
+              "width": 0.71094970703125,
+              "height": 0.5824999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 310061233
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.24187499999999998,
+              "top": 0.027499999999999997,
+              "width": 0.673125,
+              "height": 0.7875
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 761589120
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.06524999141693115,
+              "top": 0.31849998474121094,
+              "width": 0.826875,
+              "height": 0.5025
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 760884028
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.23399999141693115,
+              "top": 0.050999999046325684,
+              "width": 0.485625,
+              "height": 0.8999999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 204347021
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2733935546875,
+              "top": 0.3075,
+              "width": 0.5711303710937501,
+              "height": 0.6625
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 600951120
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.1440625,
+              "top": 0.24,
+              "width": 0.634775390625,
+              "height": 0.6599999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758806801
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.12666666666666668,
+              "top": 0.335,
+              "width": 0.34333333333333327,
+              "height": 0.2775
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 733299976
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.009699578188430312,
+              "top": 0.06550000190734863,
+              "width": 0.9076048714479027,
+              "height": 0.8425
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 149671657
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.0469999885559082,
+              "top": 0.1364999771118164,
+              "width": 0.9275,
+              "height": 0.6125
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 121457124
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3619999885559082,
+              "top": 0.13349998474121094,
+              "width": 0.5875,
+              "height": 0.59
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 753358381
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.31875,
+              "top": 0.355,
+              "width": 0.421875,
+              "height": 0.3075
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 743214006
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.31142857142857144,
+              "top": 0.3675,
+              "width": 0.4371428571428571,
+              "height": 0.41750000000000004
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 375420526
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.0078857421875,
+              "top": 0.22249999999999998,
+              "width": 0.186103515625,
+              "height": 0.445
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.11197753906249999,
+              "top": 0.40750000000000003,
+              "width": 0.18768066406249997,
+              "height": 0.33749999999999997
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.545693359375,
+              "top": 0.15249999999999997,
+              "width": 0.20976074218749996,
+              "height": 0.31999999999999995
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.5251904296875,
+              "top": 0.4375,
+              "width": 0.16086914062500002,
+              "height": 0.4325
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.6513623046875,
+              "top": 0.335,
+              "width": 0.2002978515624999,
+              "height": 0.5075000000000001
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.7270654296875,
+              "top": 0.5275,
+              "width": 0.16560058593749993,
+              "height": 0.4
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.861123046875,
+              "top": 0.435,
+              "width": 0.13887695312500004,
+              "height": 0.4199999999999999
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.3611669921875,
+              "top": 0.44749999999999995,
+              "width": 0.23026367187500002,
+              "height": 0.3499999999999999
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.293349609375,
+              "top": 0.2725,
+              "width": 0.2791552734375,
+              "height": 0.36999999999999994
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.32173828125,
+              "top": 0.26249999999999996,
+              "width": 0.25865234374999996,
+              "height": 0.365
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757320222
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.05070196634118064,
+              "top": 0.3612844271673068,
+              "width": 0.887153094570846,
+              "height": 0.22146018448051819
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 54158767
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.25154228855721394,
+              "top": 0.0125,
+              "width": 0.5954228855721393,
+              "height": 0.9600000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 121131438
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.07112774079227388,
+              "top": 0.3513161210698812,
+              "width": 0.39059419805592,
+              "height": 0.3146733214461289
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.45969790372825753,
+              "top": 0.2676859948951292,
+              "width": 0.20968172047285433,
+              "height": 0.3163418207810475
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.5053463165584722,
+              "top": 0.3867556435463688,
+              "width": 0.2223136988484482,
+              "height": 0.2999164878927174
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.3366159194837526,
+              "top": 0.5114872670157699,
+              "width": 0.3226398808928761,
+              "height": 0.34336233426969975
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 755592070
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.012061248527679624,
+              "top": 0.22,
+              "width": 0.8563486454652531,
+              "height": 0.47750000000000004
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 173224260
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.24178466796875,
+              "top": 0.2025,
+              "width": 0.47356445312499995,
+              "height": 0.6349999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 760755204
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.052757605495583906,
+              "top": 0.3025,
+              "width": 0.9094406280667321,
+              "height": 0.5225
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 753317552
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.32187744140624996,
+              "top": 0.16499999999999998,
+              "width": 0.46681640625,
+              "height": 0.5574999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 413821592
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.038295898437499996,
+              "top": 0.4125,
+              "width": 0.3196875,
+              "height": 0.42000000000000004
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.23477050781249997,
+              "top": 0.4475,
+              "width": 0.27473144531250004,
+              "height": 0.45499999999999996
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 760884168
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.06749999999999999,
+              "top": 0.145,
+              "width": 0.8587499999999999,
+              "height": 0.6475
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 89661547
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3261016949152542,
+              "top": 0.25999999999999995,
+              "width": 0.17264207377866397,
+              "height": 0.195
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.3740578265204387,
+              "top": 0.4425,
+              "width": 0.17983549351944167,
+              "height": 0.14749999999999996
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 731550771
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.173583984375,
+              "top": 0.14,
+              "width": 0.547119140625,
+              "height": 0.6749999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758226798
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.115,
+              "top": 0.2775,
+              "width": 0.6525,
+              "height": 0.5449999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 72437412
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.37184814453125,
+              "top": 0.1875,
+              "width": 0.2768017578125,
+              "height": 0.6449999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 410243686
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.20164686902084522,
+              "top": 0.4323890604544997,
+              "width": 0.4464697811419556,
+              "height": 0.31600357490517267
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 760332029
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2224643320363165,
+              "top": 0.215,
+              "width": 0.46485084306095975,
+              "height": 0.42500000000000004
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 451985038
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2834716796875,
+              "top": 0.22749999999999998,
+              "width": 0.51525146484375,
+              "height": 0.49499999999999994
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 711175210
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.41,
+              "top": 0.285,
+              "width": 0.10000000000000003,
+              "height": 0.09500000000000003
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.45333333333333337,
+              "top": 0.3225,
+              "width": 0.1433333333333333,
+              "height": 0.10999999999999999
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.5066666666666667,
+              "top": 0.285,
+              "width": 0.15666666666666662,
+              "height": 0.09500000000000003
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757819168
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.0044444444444444444,
+              "top": 0.0525,
+              "width": 0.9955555555555555,
+              "height": 0.9425
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 753775990
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.09333333333333334,
+              "top": 0.1525,
+              "width": 0.7433333333333332,
+              "height": 0.54
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757346124
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.13745454545454544,
+              "top": 0.1775,
+              "width": 0.5905454545454545,
+              "height": 0.38749999999999996
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 760486373
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.06499511718749999,
+              "top": 0.1925,
+              "width": 0.7597705078125,
+              "height": 0.655
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 32741254
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.36689453125000004,
+              "top": 0.41250000000000003,
+              "width": 0.20743652343749996,
+              "height": 0.28250000000000003
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 609227454
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.13840087890625,
+              "top": 0.1175,
+              "width": 0.7236865234375001,
+              "height": 0.7424999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 79275893
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.21375000000000002,
+              "top": 0.10500000000000001,
+              "width": 0.58447265625,
+              "height": 0.81
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 746984399
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2534083239595051,
+              "top": 0.32,
+              "width": 0.6277615298087739,
+              "height": 0.3525
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 292129516
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.25716796875000003,
+              "top": 0.18250000000000002,
+              "width": 0.48260742187500005,
+              "height": 0.5000000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 756068323
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.24898823529411762,
+              "top": 0.28750000000000003,
+              "width": 0.5386764705882353,
+              "height": 0.3575
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 739884794
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.1875,
+              "top": 0.13499999999999998,
+              "width": 0.7012499999999999,
+              "height": 0.7675
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 753280359
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.13846540880503144,
+              "top": 0.1525,
+              "width": 0.8307924528301887,
+              "height": 0.6575000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758333372
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.25642822265625,
+              "top": 0.27749999999999997,
+              "width": 0.42792480468749994,
+              "height": 0.53
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757781031
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.05437499999999999,
+              "top": 0.11499999999999999,
+              "width": 0.890625,
+              "height": 0.5549999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 267337555
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.1825,
+              "top": 0.1825,
+              "width": 0.6900000000000001,
+              "height": 0.575
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 543710309
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.14212890625,
+              "top": 0.32749999999999996,
+              "width": 0.5442041015625,
+              "height": 0.5774999999999999
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.5292431640624999,
+              "top": 0.21999999999999997,
+              "width": 0.47075683593750006,
+              "height": 0.5700000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 736426233
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.17333333333333334,
+              "top": 0.0225,
+              "width": 0.6566666666666667,
+              "height": 0.7275
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 548150611
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.08204345703124999,
+              "top": 0.22249999999999998,
+              "width": 0.6458740234375,
+              "height": 0.76
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 58872437
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.00166748046875,
+              "top": 0,
+              "width": 0.91544677734375,
+              "height": 0.9950000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 751955112
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.11666666666666665,
+              "top": 0.1275,
+              "width": 0.7266666666666666,
+              "height": 0.73
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 760605789
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.18999999999999997,
+              "top": 0.1825,
+              "width": 0.5766666666666667,
+              "height": 0.31999999999999995
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 751710037
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.285,
+              "top": 0.33749999999999997,
+              "width": 0.38062499999999994,
+              "height": 0.38999999999999996
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 560763637
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.44199951171875,
+              "top": 0.46749999999999997,
+              "width": 0.16154296875000002,
+              "height": 0.14750000000000013
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 319569664
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.25178955078125,
+              "top": 0.027499999999999997,
+              "width": 0.5569384765625,
+              "height": 0.9700000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757345605
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.11957519531250001,
+              "top": 0.23,
+              "width": 0.60009033203125,
+              "height": 0.54
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 295217115
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3798193359375,
+              "top": 0.22,
+              "width": 0.41367919921875,
+              "height": 0.525
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 760679681
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.13840087890625,
+              "top": 0.1525,
+              "width": 0.67866455078125,
+              "height": 0.6849999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 593022400
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.4375,
+              "top": 0.395,
+              "width": 0.13,
+              "height": 0.12749999999999995
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 14825615
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.06503173828125,
+              "top": 0.125,
+              "width": 0.7503662109375,
+              "height": 0.8674999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 719280735
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2755901426718547,
+              "top": 0.4625,
+              "width": 0.3320363164721141,
+              "height": 0.12249999999999994
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.38184176394293123,
+              "top": 0.41,
+              "width": 0.28887159533073936,
+              "height": 0.12500000000000006
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 71468161
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3433333333333333,
+              "top": 0.44,
+              "width": 0.3966666666666668,
+              "height": 0.185
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.09999999999999999,
+              "top": 0.38,
+              "width": 0.41333333333333333,
+              "height": 0.21499999999999997
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 743438449
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.33,
+              "top": 0.325,
+              "width": 0.37000000000000005,
+              "height": 0.47500000000000003
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 374538295
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.07022443890274314,
+              "top": 0.01,
+              "width": 0.9193017456359103,
+              "height": 0.905
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 737872567
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.0025208333333333333,
+              "top": 0.0275,
+              "width": 0.9629583333333334,
+              "height": 0.9575
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757775156
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.256845703125,
+              "top": 0.1025,
+              "width": 0.5078540039062499,
+              "height": 0.6475
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.24711669921874999,
+              "top": 0.3725,
+              "width": 0.35218994140624993,
+              "height": 0.5025
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 417706775
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.22080322265625,
+              "top": 0.34249999999999997,
+              "width": 0.20570556640625,
+              "height": 0.18250000000000005
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.181171875,
+              "top": 0.46499999999999997,
+              "width": 0.12078124999999998,
+              "height": 0.19500000000000006
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.3283740234375,
+              "top": 0.3625,
+              "width": 0.03208251953125002,
+              "height": 0.15750000000000003
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 735809283
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.19312084993359893,
+              "top": 0.19749999999999998,
+              "width": 0.6210590969455512,
+              "height": 0.6274999999999998
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 68308289
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.28971679687499996,
+              "top": 0.105,
+              "width": 0.41459472656249996,
+              "height": 0.7675
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757892994
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0,
+              "top": 0.03,
+              "width": 1,
+              "height": 0.9299999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 308798454
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.26574394463667816,
+              "top": 0.35,
+              "width": 0.5447750865051904,
+              "height": 0.38750000000000007
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 723409370
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.1465234375,
+              "top": 0.06749999999999999,
+              "width": 0.41958984374999997,
+              "height": 0.7749999999999999
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.682666015625,
+              "top": 0.565,
+              "width": 0.14985351562500004,
+              "height": 0.3450000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 186785420
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.26224365234374997,
+              "top": 0.19749999999999998,
+              "width": 0.30038818359375,
+              "height": 0.5025
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 761724006
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.4363941335194666,
+              "top": 0.3400157630416634,
+              "width": 0.08163720885373754,
+              "height": 0.2083144969091119
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 361343466
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.4520418954559055,
+              "top": 0.32467511837846674,
+              "width": 0.2721130145750161,
+              "height": 0.21148679889249944
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.1926180888144395,
+              "top": 0.21787428493775451,
+              "width": 0.33414914225014913,
+              "height": 0.12477721134657471
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.17005949693257286,
+              "top": 0.3024690044947543,
+              "width": 0.2650634546119326,
+              "height": 0.20937193090357448
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.10238372128697304,
+              "top": 0.39975293198530404,
+              "width": 0.23827512675221613,
+              "height": 0.16707457112507462
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 761037191
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.4303914407905424,
+              "top": 0.4223958143222619,
+              "width": 0.13686948073486355,
+              "height": 0.19869525863690474
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 596143572
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.1575,
+              "top": 0.0575,
+              "width": 0.6825,
+              "height": 0.8825
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 749377128
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.18281250000000002,
+              "top": 0.05750000000000001,
+              "width": 0.60609375,
+              "height": 0.765
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 755406952
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.44333333333333336,
+              "top": 0.5925,
+              "width": 0.2766666666666667,
+              "height": 0.15249999999999997
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 726598313
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.049999999999999996,
+              "top": 0.16,
+              "width": 0.37,
+              "height": 0.36249999999999993
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 759777673
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.28,
+              "top": 0.1625,
+              "width": 0.525,
+              "height": 0.53
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 624536236
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0,
+              "top": 0.065,
+              "width": 1,
+              "height": 0.8725
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 3535513
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.092578125,
+              "top": 0.0625,
+              "width": 0.46289062499999994,
+              "height": 0.5199999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 698481916
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.37293714924578936,
+              "top": 0.32124018565901585,
+              "width": 0.21358343526083023,
+              "height": 0.17447660908631207
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.4493717482949098,
+              "top": 0.4350678385468015,
+              "width": 0.13342899749370363,
+              "height": 0.15008740566564477
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758112264
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2843612966229839,
+              "top": 0.18274193548387097,
+              "width": 0.5221222908266128,
+              "height": 0.6370967741935483
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 154452586
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.1151123046875,
+              "top": 0.18499999999999997,
+              "width": 0.80808837890625,
+              "height": 0.6975
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757812338
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.17214750542299348,
+              "top": 0.2375,
+              "width": 0.7385683297180042,
+              "height": 0.22000000000000003
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 46547792
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.35850830078125,
+              "top": 0.215,
+              "width": 0.39352539062499997,
+              "height": 0.3325
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758303142
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.24845458984375,
+              "top": 0.17,
+              "width": 0.4368798828125,
+              "height": 0.5999999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 763307895
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.17243652343750002,
+              "top": 0.1275,
+              "width": 0.6725024414062499,
+              "height": 0.855
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 682853315
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.045,
+              "top": 0.045,
+              "width": 0.9375,
+              "height": 0.82
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 761321810
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3279296875,
+              "top": 0.3325,
+              "width": 0.256640625,
+              "height": 0.3900000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 429671160
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.1116796875,
+              "top": 0.0525,
+              "width": 0.62587158203125,
+              "height": 0.5075000000000001
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.2000927734375,
+              "top": 0.4425,
+              "width": 0.52815185546875,
+              "height": 0.45499999999999996
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 753324687
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.09666666666666666,
+              "top": 0.16,
+              "width": 0.7533333333333333,
+              "height": 0.51
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 588103612
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.17333333333333334,
+              "top": 0.2575,
+              "width": 0.6766666666666666,
+              "height": 0.41250000000000003
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 760896231
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.10124999999999999,
+              "top": 0.12,
+              "width": 0.78,
+              "height": 0.695
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 88130944
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.15666666666666665,
+              "top": 0.265,
+              "width": 0.6966666666666668,
+              "height": 0.365
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 9926106
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3236781609195402,
+              "top": 0.1175,
+              "width": 0.568888888888889,
+              "height": 0.6199999999999999
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.12996168582375478,
+              "top": 0.38749999999999996,
+              "width": 0.5836015325670497,
+              "height": 0.545
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758358635
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.047861328125,
+              "top": 0.08249999999999999,
+              "width": 0.91431640625,
+              "height": 0.7899999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 102196985
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.4698951115711861,
+              "top": 0.1111027415727417,
+              "width": 0.2509643346857661,
+              "height": 0.22629087481497445
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.47412484754903605,
+              "top": 0.30249829457045374,
+              "width": 0.3031310784125827,
+              "height": 0.20937193090357442
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 53098995
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.1288888888888889,
+              "top": 0.25,
+              "width": 0.8711111111111112,
+              "height": 0.5425
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758131463
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.06064453125,
+              "top": 0.01,
+              "width": 0.9127001953125,
+              "height": 0.9475000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757427762
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.36333333333333334,
+              "top": 0.0875,
+              "width": 0.46666666666666673,
+              "height": 0.6975
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758718188
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.3708544921875,
+              "top": 0.32249999999999995,
+              "width": 0.31732910156249994,
+              "height": 0.32750000000000007
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757453454
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.1087646484375,
+              "top": 0.1925,
+              "width": 0.813720703125,
+              "height": 0.5775
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 762102324
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.289072265625,
+              "top": 0.13499999999999998,
+              "width": 0.42063720703124996,
+              "height": 0.73
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757346008
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.09091334568410936,
+              "top": 0.3374786406703543,
+              "width": 0.6288643625079169,
+              "height": 0.43001054274604317
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757582988
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0,
+              "top": 0.16298387096774192,
+              "width": 0.9180645161290322,
+              "height": 0.4233870967741935
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758340181
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.30375997225112733,
+              "top": 0.2770967741935484,
+              "width": 0.4769337495664239,
+              "height": 0.3056711758584808
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758292411
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2288414346018145,
+              "top": 0.4751612903225806,
+              "width": 0.25053553427419356,
+              "height": 0.372983870967742
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.4409425403225806,
+              "top": 0,
+              "width": 0.47402461882560476,
+              "height": 0.364274193548387
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 756855073
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.28193115234375,
+              "top": 0.29500000000000004,
+              "width": 0.295927734375,
+              "height": 0.31999999999999995
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 420251482
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.23666666666666666,
+              "top": 0.2775,
+              "width": 0.3666666666666667,
+              "height": 0.28250000000000003
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758102991
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2225,
+              "top": 0.17,
+              "width": 0.6324999999999998,
+              "height": 0.69
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 759387723
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.38666666666666666,
+              "top": 0.335,
+              "width": 0.26999999999999996,
+              "height": 0.2475
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 45530370
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.24562499999999998,
+              "top": 0.1575,
+              "width": 0.61125,
+              "height": 0.5599999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 36241171
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.380625,
+              "top": 0.1825,
+              "width": 0.38812499999999994,
+              "height": 0.6325
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758113655
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.22611328125000002,
+              "top": 0.19250000000000003,
+              "width": 0.50099609375,
+              "height": 0.5650000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 440553240
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.4221122435967075,
+              "top": 0.2823538223101797,
+              "width": 0.19435817485633455,
+              "height": 0.49505813735033755
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758358605
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.11477294921875,
+              "top": 0.115,
+              "width": 0.7622656250000001,
+              "height": 0.6875
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 562917680
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2660546875,
+              "top": 0.23500000000000001,
+              "width": 0.53923583984375,
+              "height": 0.49249999999999994
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758126480
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.15375,
+              "top": 0.034999999999999996,
+              "width": 0.6299999999999999,
+              "height": 0.8024999999999999
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 763017031
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.06999999999999999,
+              "top": 0.26,
+              "width": 0.7433333333333334,
+              "height": 0.4525
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 760275747
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.2064990234375,
+              "top": 0.1775,
+              "width": 0.576708984375,
+              "height": 0.6000000000000001
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 551586709
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.192,
+              "top": 0.268,
+              "width": 0.24,
+              "height": 0.35
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 762642730
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.046,
+              "top": 0.4,
+              "width": 0.69,
+              "height": 0.295
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 635018448
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.25,
+              "top": 0.23,
+              "width": 0.34,
+              "height": 0.56
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758364081
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.024,
+              "top": 0.236,
+              "width": 0.904,
+              "height": 0.658
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 763196938
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.415,
+              "top": 0.195,
+              "width": 0.235,
+              "height": 0.455
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 761195981
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.145,
+              "top": 0.21,
+              "width": 0.37,
+              "height": 0.385
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.5,
+              "top": 0.34,
+              "width": 0.175,
+              "height": 0.415
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 543710321
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.318,
+              "top": 0.045,
+              "width": 0.37,
+              "height": 0.555
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.438,
+              "top": 0.568,
+              "width": 0.314,
+              "height": 0.407
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 49310224
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.036,
+              "top": 0.155,
+              "width": 0.916,
+              "height": 0.517
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 734046808
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.415,
+              "top": 0.455,
+              "width": 0.165,
+              "height": 0.295
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 758131380
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.125,
+              "top": 0.044,
+              "width": 0.875,
+              "height": 0.69
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757847934
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.188,
+              "top": 0.172,
+              "width": 0.63,
+              "height": 0.618
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757714743
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.415,
+              "top": 0.342,
+              "width": 0.305,
+              "height": 0.35
+            },
+            {
+              "shape": "rectangle",
+              "left": 0.195,
+              "top": 0.68,
+              "width": 0.44,
+              "height": 0.285
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 763228436
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.18,
+              "top": 0.115,
+              "width": 0.65,
+              "height": 0.78
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 449740880
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.0,
+              "top": 0.0,
+              "width": 0.902,
+              "height": 0.768
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 748241002
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.226,
+              "top": 0.388,
+              "width": 0.302,
+              "height": 0.2
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 762538109
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.262,
+              "top": 0.275,
+              "width": 0.402,
+              "height": 0.363
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 757495403
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.232,
+              "top": 0.312,
+              "width": 0.412,
+              "height": 0.392
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 621817555
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.315,
+              "top": 0.19,
+              "width": 0.535,
+              "height": 0.55
+            }
+          ]
+        },
+        {
+          "condition": {
+            "type": "condition.equals",
+            "data": {
+              "type": "data.input",
+              "path": "photo_id"
+            },
+            "to": 750943298
+          },
+          "result": [
+            {
+              "shape": "rectangle",
+              "left": 0.07,
+              "top": 0.145,
+              "width": 0.84,
+              "height": 0.745
+            }
+          ]
+        }
+      ],
+      "default": []
+    }
+  }
+}

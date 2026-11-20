@@ -1,0 +1,763 @@
+[
+  {
+    "stage": "bbox_training",
+    "pool_id": "6867719",
+    "project_id": "11838",
+    "status": "OPEN",
+    "accepted_pages": 333,
+    "reward_rub": 0.0,
+    "estimated_cost_with_fee_rub": 0.0,
+    "defaults": {
+      "default_overlap_for_new_task_suites": 30000
+    },
+    "quality_control": {
+      "configs": [
+        {
+          "collector_config": {
+            "type": "TRAINING",
+            "uuid": "593bbea1-f579-4e64-950e-973c3b68b8a2",
+            "parameters": {}
+          },
+          "rules": [
+            {
+              "conditions": [
+                {
+                  "key": "submitted_assignments_count",
+                  "operator": "EQ",
+                  "value": 3
+                }
+              ],
+              "action": {
+                "type": "SET_SKILL_FROM_OUTPUT_FIELD",
+                "parameters": {
+                  "from_field": "correct_answers_rate",
+                  "skill_id": "21503"
+                }
+              }
+            },
+            {
+              "conditions": [
+                {
+                  "key": "next_assignment_available",
+                  "operator": "EQ",
+                  "value": false
+                },
+                {
+                  "key": "total_answers_count",
+                  "operator": "GT",
+                  "value": 0
+                }
+              ],
+              "action": {
+                "type": "SET_SKILL_FROM_OUTPUT_FIELD",
+                "parameters": {
+                  "from_field": "correct_answers_rate",
+                  "skill_id": "21503"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "reward_per_assignment": 0.0
+  },
+  {
+    "stage": "bbox_exam",
+    "pool_id": "6867720",
+    "project_id": "11838",
+    "status": "CLOSED",
+    "accepted_pages": 17,
+    "reward_rub": 93.0,
+    "estimated_cost_with_fee_rub": 130.2,
+    "defaults": {
+      "default_overlap_for_new_task_suites": 1
+    },
+    "filter": {
+      "and": [
+        {
+          "category": "profile",
+          "key": "languages",
+          "operator": "IN",
+          "value": "RU"
+        }
+      ]
+    },
+    "quality_control": {
+      "training_requirement": {
+        "training_passing_skill_value": 100,
+        "training_pool_id": "6867719"
+      },
+      "configs": []
+    },
+    "reward_per_assignment": 5.0
+  },
+  {
+    "stage": "bbox",
+    "pool_id": "6867722",
+    "project_id": "11838",
+    "status": "CLOSED",
+    "accepted_pages": 100,
+    "reward_rub": 200.0,
+    "estimated_cost_with_fee_rub": 280.0,
+    "defaults": {
+      "default_overlap_for_new_task_suites": 1
+    },
+    "filter": {
+      "and": [
+        {
+          "category": "profile",
+          "key": "languages",
+          "operator": "IN",
+          "value": "RU"
+        },
+        {
+          "category": "skill",
+          "key": "21502",
+          "operator": "GTE",
+          "value": 80
+        }
+      ]
+    },
+    "quality_control": {
+      "configs": []
+    },
+    "reward_per_assignment": 2.0
+  },
+  {
+    "stage": "review_training",
+    "pool_id": "6872482",
+    "project_id": "11957",
+    "status": "OPEN",
+    "accepted_pages": 138,
+    "reward_rub": 0.0,
+    "estimated_cost_with_fee_rub": 0.0,
+    "defaults": {
+      "default_overlap_for_new_task_suites": 30000
+    },
+    "quality_control": {
+      "configs": [
+        {
+          "collector_config": {
+            "type": "TRAINING",
+            "uuid": "69a98aaf-cbb6-4eab-bb6a-f47426896327",
+            "parameters": {}
+          },
+          "rules": [
+            {
+              "conditions": [
+                {
+                  "key": "submitted_assignments_count",
+                  "operator": "EQ",
+                  "value": 2
+                }
+              ],
+              "action": {
+                "type": "SET_SKILL_FROM_OUTPUT_FIELD",
+                "parameters": {
+                  "from_field": "correct_answers_rate",
+                  "skill_id": "21828"
+                }
+              }
+            },
+            {
+              "conditions": [
+                {
+                  "key": "next_assignment_available",
+                  "operator": "EQ",
+                  "value": false
+                },
+                {
+                  "key": "total_answers_count",
+                  "operator": "GT",
+                  "value": 0
+                }
+              ],
+              "action": {
+                "type": "SET_SKILL_FROM_OUTPUT_FIELD",
+                "parameters": {
+                  "from_field": "correct_answers_rate",
+                  "skill_id": "21828"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "reward_per_assignment": 0.0
+  },
+  {
+    "stage": "review_exam",
+    "pool_id": "6872483",
+    "project_id": "11957",
+    "status": "CLOSED",
+    "accepted_pages": 37,
+    "reward_rub": 3.7,
+    "estimated_cost_with_fee_rub": 5.18,
+    "defaults": {
+      "default_overlap_for_new_task_suites": 24
+    },
+    "filter": {
+      "and": [
+        {
+          "category": "profile",
+          "key": "languages",
+          "operator": "IN",
+          "value": "RU"
+        }
+      ]
+    },
+    "quality_control": {
+      "training_requirement": {
+        "training_passing_skill_value": 80,
+        "training_pool_id": "6872482"
+      },
+      "configs": [
+        {
+          "collector_config": {
+            "type": "GOLDEN_SET",
+            "uuid": "e95ff829-f3fe-427c-9577-02e44289d2c5",
+            "parameters": {
+              "history_size": 8
+            }
+          },
+          "rules": [
+            {
+              "conditions": [
+                {
+                  "key": "golden_set_answers_count",
+                  "operator": "EQ",
+                  "value": 8
+                }
+              ],
+              "action": {
+                "type": "SET_SKILL_FROM_OUTPUT_FIELD",
+                "parameters": {
+                  "from_field": "golden_set_correct_answers_rate",
+                  "skill_id": "21829"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "reward_per_assignment": 0.1
+  },
+  {
+    "stage": "review_pilot",
+    "pool_id": "6872504",
+    "project_id": "11957",
+    "status": "CLOSED",
+    "accepted_pages": 6,
+    "reward_rub": 9.0,
+    "estimated_cost_with_fee_rub": 12.6,
+    "defaults": {
+      "default_overlap_for_new_task_suites": 2
+    },
+    "filter": {
+      "and": [
+        {
+          "category": "profile",
+          "key": "languages",
+          "operator": "IN",
+          "value": "RU"
+        },
+        {
+          "category": "skill",
+          "key": "21829",
+          "operator": "GTE",
+          "value": 75
+        }
+      ]
+    },
+    "quality_control": {
+      "configs": [
+        {
+          "collector_config": {
+            "type": "ANSWER_COUNT",
+            "uuid": "aaa481ea-a4e6-4f35-91a7-c3a16156ae3b",
+            "parameters": {}
+          },
+          "rules": [
+            {
+              "conditions": [
+                {
+                  "key": "assignments_accepted_count",
+                  "operator": "GTE",
+                  "value": 2
+                }
+              ],
+              "action": {
+                "type": "RESTRICTION_V2",
+                "parameters": {
+                  "private_comment": "Лимит: 2 принятые страницы Review-пилота на исполнителя.",
+                  "scope": "POOL",
+                  "duration_unit": "PERMANENT"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "reward_per_assignment": 1.5
+  },
+  {
+    "stage": "review",
+    "pool_id": "6872484",
+    "project_id": "11957",
+    "status": "CLOSED",
+    "accepted_pages": 160,
+    "reward_rub": 240.0,
+    "estimated_cost_with_fee_rub": 336.0,
+    "defaults": {
+      "default_overlap_for_new_task_suites": 2
+    },
+    "filter": {
+      "and": [
+        {
+          "category": "profile",
+          "key": "languages",
+          "operator": "IN",
+          "value": "RU"
+        },
+        {
+          "category": "skill",
+          "key": "21829",
+          "operator": "GTE",
+          "value": 75
+        }
+      ]
+    },
+    "quality_control": {
+      "configs": [
+        {
+          "collector_config": {
+            "type": "GOLDEN_SET",
+            "uuid": "763bd296-fe92-48fd-ae6e-87651569b676",
+            "parameters": {
+              "history_size": 8
+            }
+          },
+          "rules": [
+            {
+              "conditions": [
+                {
+                  "key": "golden_set_answers_count",
+                  "operator": "GTE",
+                  "value": 5
+                },
+                {
+                  "key": "golden_set_correct_answers_rate",
+                  "operator": "LT",
+                  "value": 75.0
+                }
+              ],
+              "action": {
+                "type": "RESTRICTION_V2",
+                "parameters": {
+                  "private_comment": "Менее 75% на 5+ контролях Review",
+                  "scope": "POOL",
+                  "duration_unit": "PERMANENT"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "reward_per_assignment": 1.5
+  },
+  {
+    "stage": "bbox_extra_exam",
+    "pool_id": "6874967",
+    "project_id": "11838",
+    "status": "CLOSED",
+    "accepted_pages": 12,
+    "reward_rub": 1.2,
+    "estimated_cost_with_fee_rub": 1.68,
+    "defaults": {
+      "default_overlap_for_new_task_suites": 12
+    },
+    "filter": {
+      "and": [
+        {
+          "category": "profile",
+          "key": "languages",
+          "operator": "IN",
+          "value": "RU"
+        }
+      ]
+    },
+    "quality_control": {
+      "training_requirement": {
+        "training_passing_skill_value": 100,
+        "training_pool_id": "6867719"
+      },
+      "configs": []
+    },
+    "reward_per_assignment": 0.1
+  },
+  {
+    "stage": "reannotation_131",
+    "pool_id": "6874984",
+    "project_id": "11838",
+    "status": "CLOSED",
+    "accepted_pages": 27,
+    "reward_rub": 13.5,
+    "estimated_cost_with_fee_rub": 18.9,
+    "defaults": {
+      "default_overlap_for_new_task_suites": 1
+    },
+    "filter": {
+      "and": [
+        {
+          "category": "profile",
+          "key": "languages",
+          "operator": "IN",
+          "value": "RU"
+        },
+        {
+          "category": "skill",
+          "key": "21502",
+          "operator": "GTE",
+          "value": 80
+        }
+      ]
+    },
+    "quality_control": {
+      "configs": []
+    },
+    "reward_per_assignment": 0.5
+  },
+  {
+    "stage": "review_131",
+    "pool_id": "6875096",
+    "project_id": "11957",
+    "status": "CLOSED",
+    "accepted_pages": 54,
+    "reward_rub": 16.84,
+    "estimated_cost_with_fee_rub": 23.576,
+    "defaults": {
+      "default_overlap_for_new_task_suites": 2
+    },
+    "filter": {
+      "and": [
+        {
+          "category": "profile",
+          "key": "languages",
+          "operator": "IN",
+          "value": "RU"
+        },
+        {
+          "category": "skill",
+          "key": "21829",
+          "operator": "GTE",
+          "value": 75
+        }
+      ]
+    },
+    "quality_control": {
+      "configs": [
+        {
+          "collector_config": {
+            "type": "GOLDEN_SET",
+            "uuid": "31d7c5e5-e697-4944-966e-5484e7f3b2f1",
+            "parameters": {
+              "history_size": 8
+            }
+          },
+          "rules": [
+            {
+              "conditions": [
+                {
+                  "key": "golden_set_answers_count",
+                  "operator": "GTE",
+                  "value": 5
+                },
+                {
+                  "key": "golden_set_correct_answers_rate",
+                  "operator": "LT",
+                  "value": 75.0
+                }
+              ],
+              "action": {
+                "type": "RESTRICTION_V2",
+                "parameters": {
+                  "private_comment": "Менее 75% на 5+ контролях Review",
+                  "scope": "POOL",
+                  "duration_unit": "PERMANENT"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "reward_per_assignment": 0.3
+  },
+  {
+    "stage": "redraw_20",
+    "pool_id": "6875136",
+    "project_id": "11838",
+    "status": "CLOSED",
+    "accepted_pages": 4,
+    "reward_rub": 1.4,
+    "estimated_cost_with_fee_rub": 1.96,
+    "defaults": {
+      "default_overlap_for_new_task_suites": 1
+    },
+    "filter": {
+      "and": [
+        {
+          "category": "profile",
+          "key": "languages",
+          "operator": "IN",
+          "value": "RU"
+        },
+        {
+          "category": "skill",
+          "key": "21502",
+          "operator": "GTE",
+          "value": 80
+        }
+      ]
+    },
+    "quality_control": {
+      "configs": []
+    },
+    "reward_per_assignment": 0.35
+  },
+  {
+    "stage": "third_review_56",
+    "pool_id": "6875137",
+    "project_id": "11957",
+    "status": "CLOSED",
+    "accepted_pages": 12,
+    "reward_rub": 2.4,
+    "estimated_cost_with_fee_rub": 3.36,
+    "defaults": {
+      "default_overlap_for_new_task_suites": 1
+    },
+    "filter": {
+      "and": [
+        {
+          "category": "profile",
+          "key": "languages",
+          "operator": "IN",
+          "value": "RU"
+        },
+        {
+          "category": "skill",
+          "key": "21829",
+          "operator": "GTE",
+          "value": 75
+        }
+      ]
+    },
+    "quality_control": {
+      "configs": [
+        {
+          "collector_config": {
+            "type": "GOLDEN_SET",
+            "uuid": "20e80a13-93fe-4ee1-981e-24345b90f754",
+            "parameters": {
+              "history_size": 8
+            }
+          },
+          "rules": [
+            {
+              "conditions": [
+                {
+                  "key": "golden_set_answers_count",
+                  "operator": "GTE",
+                  "value": 5
+                },
+                {
+                  "key": "golden_set_correct_answers_rate",
+                  "operator": "LT",
+                  "value": 75.0
+                }
+              ],
+              "action": {
+                "type": "RESTRICTION_V2",
+                "parameters": {
+                  "private_comment": "Менее 75% на 5+ контролях Review",
+                  "scope": "POOL",
+                  "duration_unit": "PERMANENT"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "reward_per_assignment": 0.2
+  },
+  {
+    "stage": "redraw_review_20",
+    "pool_id": "6875152",
+    "project_id": "11957",
+    "status": "CLOSED",
+    "accepted_pages": 4,
+    "reward_rub": 0.8,
+    "estimated_cost_with_fee_rub": 1.12,
+    "defaults": {
+      "default_overlap_for_new_task_suites": 1
+    },
+    "filter": {
+      "and": [
+        {
+          "category": "profile",
+          "key": "languages",
+          "operator": "IN",
+          "value": "RU"
+        },
+        {
+          "category": "skill",
+          "key": "21829",
+          "operator": "GTE",
+          "value": 75
+        }
+      ]
+    },
+    "quality_control": {
+      "configs": [
+        {
+          "collector_config": {
+            "type": "GOLDEN_SET",
+            "uuid": "bdd25473-0b68-44d0-a0d2-90cce68c2630",
+            "parameters": {
+              "history_size": 8
+            }
+          },
+          "rules": [
+            {
+              "conditions": [
+                {
+                  "key": "golden_set_answers_count",
+                  "operator": "GTE",
+                  "value": 5
+                },
+                {
+                  "key": "golden_set_correct_answers_rate",
+                  "operator": "LT",
+                  "value": 75.0
+                }
+              ],
+              "action": {
+                "type": "RESTRICTION_V2",
+                "parameters": {
+                  "private_comment": "Менее 75% на 5+ контролях Review",
+                  "scope": "POOL",
+                  "duration_unit": "PERMANENT"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "reward_per_assignment": 0.2
+  },
+  {
+    "stage": "human_redraw_11",
+    "pool_id": "6875240",
+    "project_id": "11838",
+    "status": "CLOSED",
+    "accepted_pages": 3,
+    "reward_rub": 1.05,
+    "estimated_cost_with_fee_rub": 1.47,
+    "defaults": {
+      "default_overlap_for_new_task_suites": 1
+    },
+    "filter": {
+      "and": [
+        {
+          "category": "profile",
+          "key": "languages",
+          "operator": "IN",
+          "value": "RU"
+        },
+        {
+          "category": "skill",
+          "key": "21502",
+          "operator": "GTE",
+          "value": 80
+        }
+      ]
+    },
+    "quality_control": {
+      "configs": []
+    },
+    "reward_per_assignment": 0.35
+  },
+  {
+    "stage": "human_review_11",
+    "pool_id": "6875414",
+    "project_id": "11957",
+    "status": "CLOSED",
+    "accepted_pages": 3,
+    "reward_rub": 0.6,
+    "estimated_cost_with_fee_rub": 0.84,
+    "defaults": {
+      "default_overlap_for_new_task_suites": 1
+    },
+    "filter": {
+      "and": [
+        {
+          "category": "profile",
+          "key": "languages",
+          "operator": "IN",
+          "value": "RU"
+        },
+        {
+          "category": "skill",
+          "key": "21829",
+          "operator": "GTE",
+          "value": 75
+        }
+      ]
+    },
+    "quality_control": {
+      "configs": [
+        {
+          "collector_config": {
+            "type": "GOLDEN_SET",
+            "uuid": "ec704bbc-6e29-4204-85d1-0c2435d92e13",
+            "parameters": {
+              "history_size": 8
+            }
+          },
+          "rules": [
+            {
+              "conditions": [
+                {
+                  "key": "golden_set_answers_count",
+                  "operator": "GTE",
+                  "value": 5
+                },
+                {
+                  "key": "golden_set_correct_answers_rate",
+                  "operator": "LT",
+                  "value": 75.0
+                }
+              ],
+              "action": {
+                "type": "RESTRICTION_V2",
+                "parameters": {
+                  "private_comment": "Менее 75% на 5+ контролях Review",
+                  "scope": "POOL",
+                  "duration_unit": "PERMANENT"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "reward_per_assignment": 0.2
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "target": 400,
+  "initial_accepted": 267,
+  "team_accepted": 2,
+  "recheck_accepted": 55,
+  "ready": 381,
+  "pending": 19,
+  "pending_one_accept": 0,
+  "control_answers": 54,
+  "control_correct": 47,
+  "manual_accepted_split_votes": 56,
+  "complete": false,
+  "manual_selected_previous_boxes": 1
+}

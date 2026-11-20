@@ -1,0 +1,506 @@
+[
+  {
+    "photo_id": 753358381,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b00362f31a8e159e48f5da0",
+    "earlier_verdicts": [
+      "reject_inaccurate",
+      "accept"
+    ]
+  },
+  {
+    "photo_id": 754985266,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b00362f31a8e159e48f5da0",
+    "earlier_verdicts": [
+      "reject_extra",
+      "accept"
+    ]
+  },
+  {
+    "photo_id": 755178974,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b00362f31a8e159e48f5da0",
+    "earlier_verdicts": [
+      "reject_inaccurate",
+      "accept"
+    ]
+  },
+  {
+    "photo_id": 755406952,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b00362f31a8e159e48f5da0",
+    "earlier_verdicts": [
+      "reject_extra",
+      "accept"
+    ]
+  },
+  {
+    "photo_id": 756068323,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b00362f31a8e159e48f5da0",
+    "earlier_verdicts": [
+      "reject_inaccurate",
+      "accept"
+    ]
+  },
+  {
+    "photo_id": 763402375,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b00363b41181b3ad3d06559",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 6588144,
+    "third_verdict": "reject_inaccurate",
+    "assignment_id": "000068e801--6b00363f41181b3ad3d0664e",
+    "earlier_verdicts": [
+      "reject_inaccurate",
+      "accept"
+    ]
+  },
+  {
+    "photo_id": 32428310,
+    "third_verdict": "reject_inaccurate",
+    "assignment_id": "000068e801--6b00363f41181b3ad3d0664e",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 32741254,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b00363f41181b3ad3d0664e",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 58872437,
+    "third_verdict": "reject_inaccurate",
+    "assignment_id": "000068e801--6b00363f41181b3ad3d0664e",
+    "earlier_verdicts": [
+      "reject_inaccurate",
+      "accept"
+    ]
+  },
+  {
+    "photo_id": 222768842,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b00363f41181b3ad3d0664e",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 303205249,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b00364ee6cbac33af3e42b5",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 308798454,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b00364ee6cbac33af3e42b5",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 310061233,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b00364ee6cbac33af3e42b5",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 354309298,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b00364ee6cbac33af3e42b5",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 417706775,
+    "third_verdict": "reject_missed",
+    "assignment_id": "000068e801--6b00364ee6cbac33af3e42b5",
+    "earlier_verdicts": [
+      "reject_missed",
+      "accept"
+    ]
+  },
+  {
+    "photo_id": 224145341,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b003652975bfe44e38352b4",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 229270832,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b003652975bfe44e38352b4",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 241946998,
+    "third_verdict": "reject_inaccurate",
+    "assignment_id": "000068e801--6b003652975bfe44e38352b4",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 292129516,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b003652975bfe44e38352b4",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 295217115,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b003652975bfe44e38352b4",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 742183688,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b003669fb6d2a45130f09f2",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 743214006,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b003669fb6d2a45130f09f2",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 748051892,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b003669fb6d2a45130f09f2",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 752114561,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b003669fb6d2a45130f09f2",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 753317552,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b003669fb6d2a45130f09f2",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 756575793,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b003681975bfe44e383608d",
+    "earlier_verdicts": [
+      "reject_inaccurate",
+      "accept"
+    ]
+  },
+  {
+    "photo_id": 757336453,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b003681975bfe44e383608d",
+    "earlier_verdicts": [
+      "load_error",
+      "accept"
+    ]
+  },
+  {
+    "photo_id": 757435800,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b003681975bfe44e383608d",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 757847507,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b003681975bfe44e383608d",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 758013992,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b003681975bfe44e383608d",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 759944838,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036a1975bfe44e38367fa",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 760275747,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036a1975bfe44e38367fa",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 760486373,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036a1975bfe44e38367fa",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 760679681,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036a1975bfe44e38367fa",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 760884168,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036a1975bfe44e38367fa",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 758102991,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036a242d6ee7215cff630",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 758126480,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036a242d6ee7215cff630",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 758226798,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036a242d6ee7215cff630",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 758303142,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036a242d6ee7215cff630",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 758370761,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036a242d6ee7215cff630",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 760896231,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036c3975bfe44e3837331",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 761321810,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036c3975bfe44e3837331",
+    "earlier_verdicts": [
+      "reject_inaccurate",
+      "accept"
+    ]
+  },
+  {
+    "photo_id": 761589120,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036c3975bfe44e3837331",
+    "earlier_verdicts": [
+      "reject_inaccurate",
+      "accept"
+    ]
+  },
+  {
+    "photo_id": 761722213,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036c3975bfe44e3837331",
+    "earlier_verdicts": [
+      "reject_inaccurate",
+      "accept"
+    ]
+  },
+  {
+    "photo_id": 761792971,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036c3975bfe44e3837331",
+    "earlier_verdicts": [
+      "reject_inaccurate",
+      "accept"
+    ]
+  },
+  {
+    "photo_id": 458830342,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036ef975bfe44e3837e80",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 485754985,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036ef975bfe44e3837e80",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 521011933,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036ef975bfe44e3837e80",
+    "earlier_verdicts": [
+      "reject_inaccurate",
+      "accept"
+    ]
+  },
+  {
+    "photo_id": 543710309,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036ef975bfe44e3837e80",
+    "earlier_verdicts": [
+      "reject_inaccurate",
+      "accept"
+    ]
+  },
+  {
+    "photo_id": 600951120,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b0036ef975bfe44e3837e80",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 609227454,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b00371be6cbac33af3e77dd",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 688732087,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b00371be6cbac33af3e77dd",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 689319221,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b00371be6cbac33af3e77dd",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 736426233,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b00371be6cbac33af3e77dd",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  },
+  {
+    "photo_id": 737076985,
+    "third_verdict": "accept",
+    "assignment_id": "000068e801--6b00371be6cbac33af3e77dd",
+    "earlier_verdicts": [
+      "accept",
+      "reject_inaccurate"
+    ]
+  }
+]

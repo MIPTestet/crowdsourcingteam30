@@ -1,0 +1,15 @@
+{
+  "golden_set_photos": 400,
+  "boxes": 366,
+  "empty": 106,
+  "final_review_received": 11,
+  "final_review_verdicts": {
+    "reject_inaccurate": 9,
+    "accept": 1,
+    "reject_missed": 1
+  },
+  "human_replacements": 1,
+  "model_assisted_retained": 10,
+  "pools_estimated_cost_with_fee_rub": 816.886,
+  "balance_rub": 19.114
+}

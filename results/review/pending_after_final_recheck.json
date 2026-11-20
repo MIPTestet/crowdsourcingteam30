@@ -1,0 +1,276 @@
+[
+  {
+    "photo_id": 38875693,
+    "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/38875693/large.jpeg",
+    "status": "has_butterflies",
+    "boxes": [
+      {
+        "shape": "rectangle",
+        "left": 0.15049382224678995,
+        "top": 0.1634166717529297,
+        "width": 0.63719970703125,
+        "height": 0.5650000000000001
+      }
+    ],
+    "source": {
+      "type": "reannotation",
+      "pool_id": "6875136"
+    },
+    "review": {
+      "pool_id": "6875152",
+      "verdicts": [
+        "reject_inaccurate"
+      ],
+      "assignment_id": "000068e810--6b0038a9975bfe44e383e3c6"
+    }
+  },
+  {
+    "photo_id": 59063170,
+    "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/59063170/large.jpg",
+    "status": "has_butterflies",
+    "boxes": [
+      {
+        "shape": "rectangle",
+        "left": 0.29499447569251064,
+        "top": 0.2584166717529297,
+        "width": 0.41058349609374994,
+        "height": 0.42499999999999993
+      }
+    ],
+    "source": {
+      "type": "reannotation",
+      "pool_id": "6875136"
+    },
+    "review": {
+      "pool_id": "6875152",
+      "verdicts": [
+        "reject_inaccurate"
+      ],
+      "assignment_id": "000068e810--6b0038a9975bfe44e383e3c6"
+    }
+  },
+  {
+    "photo_id": 267337555,
+    "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/267337555/large.jpeg",
+    "status": "has_butterflies",
+    "boxes": [
+      {
+        "shape": "rectangle",
+        "left": 0.21183334350585936,
+        "top": 0.2434166717529297,
+        "width": 0.605,
+        "height": 0.43000000000000005
+      }
+    ],
+    "source": {
+      "type": "reannotation",
+      "pool_id": "6875136"
+    },
+    "review": {
+      "pool_id": "6875152",
+      "verdicts": [
+        "reject_inaccurate"
+      ],
+      "assignment_id": "000068e810--6b0038a9975bfe44e383e3c6"
+    }
+  },
+  {
+    "photo_id": 446301801,
+    "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/446301801/large.jpg",
+    "status": "has_butterflies",
+    "boxes": [
+      {
+        "shape": "rectangle",
+        "left": 0.49075000762939447,
+        "top": 0.22993841088336445,
+        "width": 0.33383152173913033,
+        "height": 0.3472826086956522
+      },
+      {
+        "shape": "rectangle",
+        "left": 0.24985326849895972,
+        "top": 0.3456992804485819,
+        "width": 0.27635869565217386,
+        "height": 0.22663043478260858
+      }
+    ],
+    "source": {
+      "type": "reannotation",
+      "pool_id": "6875136"
+    },
+    "review": {
+      "pool_id": "6875152",
+      "verdicts": [
+        "reject_inaccurate"
+      ],
+      "assignment_id": "000068e810--6b0038a9975bfe44e383e3c6"
+    }
+  },
+  {
+    "photo_id": 449740665,
+    "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/449740665/large.jpeg",
+    "status": "has_butterflies",
+    "boxes": [
+      {
+        "shape": "rectangle",
+        "left": 0.15911112467447916,
+        "top": 0.20341667175292968,
+        "width": 0.6033333333333333,
+        "height": 0.625
+      }
+    ],
+    "source": {
+      "type": "reannotation",
+      "pool_id": "6875136"
+    },
+    "review": {
+      "pool_id": "6875152",
+      "verdicts": [
+        "reject_missed"
+      ],
+      "assignment_id": "000068e810--6b0038a1fb6d2a45130f8db3"
+    }
+  },
+  {
+    "photo_id": 667238360,
+    "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/667238360/large.jpg",
+    "status": "has_butterflies",
+    "boxes": [
+      {
+        "shape": "rectangle",
+        "left": 0.397386561527745,
+        "top": 0.34346393073213566,
+        "width": 0.5841209829867677,
+        "height": 0.2892249527410209
+      }
+    ],
+    "source": {
+      "type": "reannotation",
+      "pool_id": "6875136"
+    },
+    "review": {
+      "pool_id": "6875152",
+      "verdicts": [
+        "reject_extra"
+      ],
+      "assignment_id": "000068e810--6b0038a1fb6d2a45130f8db3"
+    }
+  },
+  {
+    "photo_id": 759018233,
+    "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/759018233/large.jpg",
+    "status": "has_butterflies",
+    "boxes": [
+      {
+        "shape": "rectangle",
+        "left": 0.4439674314048478,
+        "top": 0.3964516648050647,
+        "width": 0.2000179323430054,
+        "height": 0.3014224397241891
+      }
+    ],
+    "source": {
+      "type": "reannotation",
+      "pool_id": "6875136"
+    },
+    "review": {
+      "pool_id": "6875152",
+      "verdicts": [
+        "reject_inaccurate"
+      ],
+      "assignment_id": "000068e810--6b00388142d6ee7215d0a49b"
+    }
+  },
+  {
+    "photo_id": 759475465,
+    "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/759475465/large.jpg",
+    "status": "no_butterflies",
+    "boxes": [],
+    "source": {
+      "type": "reannotation",
+      "pool_id": "6875136"
+    },
+    "review": {
+      "pool_id": "6875152",
+      "verdicts": [
+        "reject_extra"
+      ],
+      "assignment_id": "000068e810--6b00388142d6ee7215d0a49b"
+    }
+  },
+  {
+    "photo_id": 759777673,
+    "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/759777673/large.jpg",
+    "status": "has_butterflies",
+    "boxes": [
+      {
+        "shape": "rectangle",
+        "left": 0.3458333206176758,
+        "top": 0.15041667938232423,
+        "width": 0.46499999999999997,
+        "height": 0.4925
+      }
+    ],
+    "source": {
+      "type": "reannotation",
+      "pool_id": "6875136"
+    },
+    "review": {
+      "pool_id": "6875152",
+      "verdicts": [
+        "reject_inaccurate"
+      ],
+      "assignment_id": "000068e810--6b00388142d6ee7215d0a49b"
+    }
+  },
+  {
+    "photo_id": 761588650,
+    "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/761588650/large.jpg",
+    "status": "has_butterflies",
+    "boxes": [
+      {
+        "shape": "rectangle",
+        "left": 0.15249999046325682,
+        "top": 0.2304166793823242,
+        "width": 0.5925,
+        "height": 0.5624999999999999
+      }
+    ],
+    "source": {
+      "type": "reannotation",
+      "pool_id": "6875136"
+    },
+    "review": {
+      "pool_id": "6875152",
+      "verdicts": [
+        "reject_extra"
+      ],
+      "assignment_id": "000068e810--6b00388142d6ee7215d0a49b"
+    }
+  },
+  {
+    "photo_id": 761897281,
+    "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/761897281/large.jpg",
+    "status": "has_butterflies",
+    "boxes": [
+      {
+        "shape": "rectangle",
+        "left": 0.19937499046325682,
+        "top": 0.2154166793823242,
+        "width": 0.735,
+        "height": 0.4774999999999999
+      }
+    ],
+    "source": {
+      "type": "reannotation",
+      "pool_id": "6875136"
+    },
+    "review": {
+      "pool_id": "6875152",
+      "verdicts": [
+        "reject_inaccurate"
+      ],
+      "assignment_id": "000068e810--6b00388142d6ee7215d0a49b"
+    }
+  }
+]

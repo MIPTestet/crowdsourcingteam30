@@ -1,0 +1,12 @@
+{
+  "pool_id": "6874967",
+  "accepted_at_check": 12,
+  "passed_numeric": 10,
+  "manually_approved_assignment_ids": [
+    "000068e757--6b0021dbf85e913f27e16e0d",
+    "000068e757--6b0021ec42d6ee7215ca9576",
+    "000068e757--6b0021ef31a8e159e489d190",
+    "000068e757--6b00224431a8e159e489e64a"
+  ],
+  "new_qualified": 6
+}
